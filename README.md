@@ -1,5 +1,18 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+**Note:** Keep the project file structure
+
+You can preview this project [here](https://fipie.github.io/counter-app/)
+
+<hr>
+<div text-align="center">
+<img src="./images/01.png" width="100%"><br>
+<img src="./images/02.png" width="100%"><br>
+<img src="./images/03.png" width="100%"><br>
+<img src="./images/04.png" width="100%"><br>
+<div>
+
+
 ## Available Scripts
 
 In the project directory, you can run:
