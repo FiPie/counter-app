@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 /*Stateless Functional Component - no state, no lifecycle components*/
 const NavBar = ({ totalCounters }) => {
   console.log("NavBar - Rendered");

@@ -28,6 +28,10 @@ class Counter extends Component {
     return (
       <React.Fragment>
         <h4>{this.props.id}</h4>
+        <img
+          src={this.props.counter.imgUrl}
+          alt={"id:" + this.props.counter.id}
+        />
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
           onClick={() => this.props.onIncrement(this.props.counter)}
@@ -38,7 +42,7 @@ class Counter extends Component {
         <button
           onClick={() =>
             this.props.onDelete(this.props.counter.id)
-          } /*Counter component is rising the event to its parent component */
+          } /*Counter component is rising the event to its parent components */
           className="btn btn-danger btn-sm m-2"
         >
           Delete
@@ -46,6 +50,11 @@ class Counter extends Component {
       </React.Fragment>
     );
   }
+
+  // getImgUrl = () => {
+  //   const imgUrl = "https://picsum.photos/30";
+  //   this.setState({ imgUrl: imgUrl });
+  // };
 
   getBadgeClasses() {
     /*Changes badge bootstrap class and hence its colour */

@@ -8,16 +8,26 @@ class App extends Component {
   which is completely invisible to other components */
   state = {
     counters: [
-      { id: 1, value: 0 },
-      { id: 2, value: 9 },
-      { id: 3, value: 0 },
-      { id: 4, value: 0 }
+      { id: 1, value: 0, imgUrl: "" },
+      { id: 2, value: 1, imgUrl: "" },
+      { id: 3, value: 0, imgUrl: "" },
+      { id: 4, value: 0, imgUrl: "" },
+      { id: 5, value: 0, imgUrl: "" },
+      { id: 6, value: 0, imgUrl: "" }
     ]
   };
 
   constructor() {
     super();
     console.log("App - Constructor");
+    this.state.counters.map(c => {
+      /*TODO: fix? I know the ids might repeat here but it's only a demo so chillax*/
+      c.id = Math.floor(Math.random() * (+1084 - 1)) + 1;
+      c.imgUrl = "https://picsum.photos/id/" + c.id + "/40/40";
+      return c;
+    });
+    /*We asign below imgUrls to each counter from photostock 
+    picsum, accordingly to seed on counter.id */
   }
   componentDidMount() {
     //Ajax Call
@@ -25,6 +35,8 @@ class App extends Component {
   }
 
   handleIncrement = counter => {
+    console.log("handleIncrement called");
+
     /*using the spread operator ... we're cloning the existing counter array */
     const counters = [...this.state.counters];
     const index = counters.indexOf(counter);
@@ -36,6 +48,15 @@ class App extends Component {
   handleReset = () => {
     const counters = this.state.counters.map(c => {
       c.value = 0;
+      return c;
+    });
+    this.setState({ counters: counters });
+  };
+
+  getImages = () => {
+    console.log("getImages called");
+    const counters = this.state.counters.map(c => {
+      c.imgUrl = "https://picsum.photos/30";
       return c;
     });
     this.setState({ counters: counters });
